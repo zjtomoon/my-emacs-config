@@ -73,6 +73,7 @@
 ;;语法检查
 (use-package flycheck
   :hook (after-init . global-flycheck-mode))
+(use-package neotree)
 
 ;;user-config
 
@@ -106,7 +107,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
+    (neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
