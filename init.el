@@ -81,15 +81,26 @@
 	 ("C-x ," . crux-find-user-init-file)
 	 ("C-S-d" . crux-duplicate-current-line-or-region)
 	 ("C-S-k" . crux-smart-kill-line)))
-(use-package ivy-posframe
+(use-package ace-window
+  :bind
+  (("M-o" . 'ace-window)))
+(use-package which-key
+  :config
+  (which-key-mode))
+(use-package lsp-mode
   :init
-  (setq ivy-posframe-display-functions-alist
-	'((swiper . ivy-posframe-display-at-frame-center)
-	  (complete-symbol . ivy-posframe-display-at-point)
-	  (counsel-M-x . ivy-posframe-display-at-frame-center)
-	  (counsel-find-file . ivy-posframe-display-at-frame-center)
-	  (ivy-switch-buffer . ivy-posframe-display-at-frame-center)
-	  (t . ivy-posframe-display-at-frame-center))))
+  (setq lsp-keymap-prefix "C-c l")
+  :hook (
+  (lsp-mode . lsp-enable-which-key-integration)
+  ;;(prog-mode . lsp)
+  (python-mode . lsp)
+  (c-mode . lsp)
+  (go-mode . lsp))
+  :commands lsp)
+(use-package lsp-ui :commands  lsp-ui-mode)
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+(use-package dap-mode)
+
 
 ;;user-config
 
@@ -123,7 +134,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init)))
+   (quote
+    (dap-mode lsp-mode ace-window ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
