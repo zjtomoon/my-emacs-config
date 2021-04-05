@@ -74,6 +74,22 @@
 (use-package flycheck
   :hook (after-init . global-flycheck-mode))
 (use-package neotree)
+(use-package super-save)
+(use-package crux
+  :bind (("C-a" . crux-move-beginning-of-line)
+	 ("C-c ^" . crux-top-join-line)
+	 ("C-x ," . crux-find-user-init-file)
+	 ("C-S-d" . crux-duplicate-current-line-or-region)
+	 ("C-S-k" . crux-smart-kill-line)))
+(use-package ivy-posframe
+  :init
+  (setq ivy-posframe-display-functions-alist
+	'((swiper . ivy-posframe-display-at-frame-center)
+	  (complete-symbol . ivy-posframe-display-at-point)
+	  (counsel-M-x . ivy-posframe-display-at-frame-center)
+	  (counsel-find-file . ivy-posframe-display-at-frame-center)
+	  (ivy-switch-buffer . ivy-posframe-display-at-frame-center)
+	  (t . ivy-posframe-display-at-frame-center))))
 
 ;;user-config
 
@@ -83,6 +99,7 @@
 
 (setq inhibit-startup-screen t)
 (setq make-backup-files nil)
+(electric-pair-mode t)
 ;;显示行号
 ;;(global-linum-mode t)
 (setq display-line-numbers-type 'relative)
@@ -106,8 +123,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
+   '(ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
