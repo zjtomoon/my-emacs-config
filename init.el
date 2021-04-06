@@ -92,15 +92,16 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook (
   (lsp-mode . lsp-enable-which-key-integration)
-  ;;(prog-mode . lsp)
-  (python-mode . lsp)
+  (prog-mode . lsp)
+  (c++-mode . lsp)
   (c-mode . lsp)
   (go-mode . lsp))
   :commands lsp)
+
 (use-package lsp-ui :commands  lsp-ui-mode)
 (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 (use-package dap-mode)
-
+(use-package smart-compile)
 
 ;;user-config
 
@@ -135,7 +136,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dap-mode lsp-mode ace-window ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
+    (smart-compile dap-mode lsp-mode ace-window ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
