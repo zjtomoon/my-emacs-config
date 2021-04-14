@@ -94,7 +94,6 @@
   (lsp-mode . lsp-enable-which-key-integration)
   (prog-mode . lsp)
   (c++-mode . lsp)
-  (rust-mode . lsp)
   (c-mode . lsp)
   (go-mode . lsp))
   :commands lsp)
