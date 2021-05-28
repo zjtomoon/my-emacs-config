@@ -95,6 +95,7 @@
   (prog-mode . lsp)
   (c++-mode . lsp)
   (c-mode . lsp)
+  (python-mode . lsp)
   (go-mode . lsp))
   :commands lsp)
 
