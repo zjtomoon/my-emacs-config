@@ -94,7 +94,6 @@
   (lsp-mode . lsp-enable-which-key-integration)
   (c++-mode . lsp)
   (c-mode . lsp)
-  (python-mode . lsp)
   (go-mode . lsp))
   :commands lsp)
 
