@@ -92,7 +92,7 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook (
   (lsp-mode . lsp-enable-which-key-integration)
-  (python-mode . lsp)
+  (prog-mode . lsp)
   (c++-mode . lsp)
   (c-mode . lsp)
   (go-mode . lsp))
