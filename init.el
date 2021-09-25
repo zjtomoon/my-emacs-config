@@ -94,6 +94,8 @@
   (lsp-mode . lsp-enable-which-key-integration)
   (shell-mode . lsp)
   (rust-mode . lsp)
+  (c-mode . lsp)
+  (c++-mode . lsp)
   (go-mode . lsp))
   :commands lsp)
 
@@ -135,7 +137,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smart-compile dap-mode lsp-mode ace-window ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
+    (rust-mode go-mode smart-compile dap-mode lsp-mode ace-window ivy-posframe ivy crux super-save neotree flycheck evil use-package smart-mode-line restart-emacs rainbow-delimiters paredit highlight-parentheses gruvbox-theme benchmark-init))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
